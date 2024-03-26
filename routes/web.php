@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\Body;
+use App\Livewire\SIngleProduct;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', Body::class)->name('home.body');
+Route::get('single-product', SingleProduct::class)->name('single.product');
 
 Auth::routes();
 
