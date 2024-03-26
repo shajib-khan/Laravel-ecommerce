@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+
+            $table->string('total_price');
+            $table->ForeignId('user_id');
+
             $table->timestamps();
         });
     }
