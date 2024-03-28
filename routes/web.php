@@ -2,6 +2,7 @@
 
 use App\Livewire\Body;
 use App\Livewire\SIngleProduct;
+use App\Livewire\Products;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,4 +21,7 @@ Route::get('single-product', SingleProduct::class)->name('single.product');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+/*product*/
+Route::get('product', Products::class)->name('all.products');
