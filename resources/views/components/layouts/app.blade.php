@@ -42,6 +42,7 @@
                             <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                         </button>
                     </form>
+                    <a href="{{ route('home') }}" class="btn btn-outline-secondary ms-3">Admin Panel</a>
                 </div>
             </div>
         </nav>
