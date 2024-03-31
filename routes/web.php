@@ -1,6 +1,8 @@
 <?php
 
 use App\Livewire\Body;
+use App\Livewire\Dashboard;
+use App\Livewire\Login;
 use App\Livewire\SIngleProduct;
 use App\Livewire\Products;
 use Illuminate\Support\Facades\Route;
@@ -21,7 +23,10 @@ Route::get('single-product', SingleProduct::class)->name('single.product');
 
 Auth::routes();
 
-Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+/*admin dashboard*/
+Route::get('admin-dashboard', Dashboard::class)->name('dashboard');
+Route::get('login', Login::class,)->name('login');
+
 
 /*product*/
 Route::get('product', Products::class)->name('all.products');

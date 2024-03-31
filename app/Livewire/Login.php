@@ -4,11 +4,12 @@ namespace App\Livewire;
 use livewire\Attributes\Layout;
 use Livewire\Component;
 
-class Products extends Component
+class Login extends Component
 {
+
     public function render()
     {
-        return view('livewire.products')
-        ->layout('layouts.admin');;
+        return view('livewire.login')
+        ->layout('layouts.admin');
     }
 }
