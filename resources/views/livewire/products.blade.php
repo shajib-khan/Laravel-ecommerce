@@ -13,5 +13,6 @@
     <option value="2">Men</option>
     <option value="3">Baby</option>
   </select>
+  <button ="btn btn-primary">Submit</button>
 </div>
 

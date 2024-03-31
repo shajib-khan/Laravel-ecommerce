@@ -1,10 +1,13 @@
 <?php
 
 use App\Livewire\Body;
+use App\Livewire\Categories;
 use App\Livewire\Dashboard;
 use App\Livewire\Login;
+use App\Livewire\Order;
 use App\Livewire\SIngleProduct;
 use App\Livewire\Products;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,8 +28,12 @@ Auth::routes();
 
 /*admin dashboard*/
 Route::get('admin-dashboard', Dashboard::class)->name('dashboard');
-Route::get('login', Login::class,)->name('login');
+Route::get('login', Login::class)->name('login');
+Route::get('order', Order::class)->name('order');
+Route::get('category', Categories::class)->name('categories');
 
 
 /*product*/
 Route::get('product', Products::class)->name('all.products');
+
+
