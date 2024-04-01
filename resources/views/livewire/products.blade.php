@@ -7,12 +7,15 @@
     <label for="formFileMultiple" class="form-label">Product Image</label>
     <input class="form-control" type="file" id="formFileMultiple" readonly>
   </div>
-  <select class="form-select" aria-label="Default select example">
-    <option selected>Select Category</option>
-    <option value="1">ladies</option>
-    <option value="2">Men</option>
-    <option value="3">Baby</option>
-  </select>
-  <button ="btn btn-primary">Submit</button>
+  <p>Select Categories</p>
+ <select class="form-select" aria-label="Default select example">
+    <option selected></option>
+        <option value="1">ladies</option>
+        <option value="2">Men</option>
+        <option value="3">Baby</option>
+      </select>
+      <button type="button" class="btn btn-primary">Upload</button>
+
+
 </div>
 
