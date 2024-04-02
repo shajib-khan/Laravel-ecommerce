@@ -8,11 +8,11 @@ use App\Models\Category as ProductCategory;
 class Categories extends Component
 {
     public $category;
-    public $category_name;
+    public $category_name="";
 
 
 
-    public function save()
+    public function newCategory()
     {
 
 
@@ -22,10 +22,12 @@ class Categories extends Component
         ProductCategory::create(
             $this->only(['category_name'])
         );
+        $this->category_name="";
 
-        session()->flash('status', 'Post successfully updated.');
+        return redirect()->back()->with('message',"category created");
 
-        return $this->redirect('');
+
+
     }
 
 

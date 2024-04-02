@@ -9,19 +9,15 @@
         </ul>
     </div>
 @endif
-@if (session('success'))
-    <div class="col-sm-12">
-        <div class="alert  alert-success alert-dismissible fade show" role="alert">
-            {{ session('success') }}
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-        </div>
+@if(session()->has('message'))
+    <div class="alert alert-success">
+        {{ session()->get('message') }}
     </div>
 @endif
-    <form wire:submit="save">
+    <form wire:submit="newCategory">
     <label for="exampleFormControlInput1" class="form-label">Categories</label>
     <input type="text" class="form-control"wire:model="category_name" id="exampleFormControlInput1" placeholder="Category">
     <button class="btn btn-primary mt-3">Submit</button>
     </form>
 </div>
+
