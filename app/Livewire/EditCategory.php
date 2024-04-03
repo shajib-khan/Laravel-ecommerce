@@ -9,8 +9,10 @@ class EditCategory extends Component
 
 {
     public $ProductCategories;
-    public $category_name;
-    public  $id;
+    public $category_name,$id;
+    
+
+
     public function mount($id)
     {
         $categories = ProductCategories::find($id);
@@ -21,19 +23,11 @@ class EditCategory extends Component
         $this->validate([
             'category_name' => 'required',
         ]);
-        $categories = ProductCategories::find($this->category_name);
+        $categories = ProductCategories::find($this->id);
         $categories->update([
             'category_name'=> $this->category_name
         ]);
-
-
-
-
-
-
         return redirect()->back()->with('message',"category updated");
-
-
     }
     public function render()
     {
