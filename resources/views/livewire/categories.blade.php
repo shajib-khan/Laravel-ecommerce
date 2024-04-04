@@ -1,5 +1,10 @@
 
 <div class="mt-3">
+    @if (session()->has('categoryUpdate'))
+    <div class="alert alert-success">
+        {{ session('categoryUpdate') }}
+    </div>
+@endif
     @if ($errors->any())
     <div class="alert alert-danger">
         <ul>

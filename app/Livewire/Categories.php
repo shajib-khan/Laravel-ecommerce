@@ -20,16 +20,17 @@ class Categories extends Component
         );
         ProductCategory::create(
             $this->only(['category_name'])
+            
         );
         $this->category_name="";
 
-        return redirect()->back()->with('message',"category created");
+        return redirect()->back()->with('message',"New Category Created");
     }
 
     public function DeleteCategories($id)
     {
         ProductCategory::find($id)->delete();
-        return redirect()->back()->with('message',"category Delete");
+        return redirect()->back()->with('message',"Category Delete");
     }
     public function render()
     {

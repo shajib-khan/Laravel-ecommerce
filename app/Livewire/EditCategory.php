@@ -4,13 +4,15 @@ namespace App\Livewire;
 use App\Models\Category as ProductCategories;
 use livewire\Attributes\Layout;
 use Livewire\Component;
+use Session;
 
 class EditCategory extends Component
 
 {
     public $ProductCategories;
-    public $category_name,$id;
-    
+    public $category_name="";
+    public $id;
+
 
 
     public function mount($id)
@@ -27,7 +29,11 @@ class EditCategory extends Component
         $categories->update([
             'category_name'=> $this->category_name
         ]);
-        return redirect()->back()->with('message',"category updated");
+        $this->reset();
+        session()->flash('categoryUpdate', 'Category successfully updated.');
+
+        return redirect()->to('category');
+
     }
     public function render()
     {

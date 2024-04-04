@@ -4,6 +4,7 @@ use App\Livewire\Body;
 use App\Livewire\Categories;
 use App\Livewire\Dashboard;
 use App\Livewire\EditCategory;
+use App\Livewire\EditProduct;
 use App\Livewire\Login;
 use App\Livewire\Order;
 use App\Livewire\SIngleProduct;
@@ -36,6 +37,7 @@ Route::get('category', Categories::class)->name('categories');
 
 /*product*/
 Route::get('product', Products::class)->name('all.products');
+Route::get('edit-product/{id}', EditProduct::class)->name('edit.product');
 
 /*category*/
 Route::get('edit-category/{id}', EditCategory::class)->name('edit.category');
