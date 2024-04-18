@@ -4,6 +4,23 @@
     <div class="alert alert-success">
         {{ session()->get('product') }}
     </div>
+</div>
+@endif
+<div class="mt-3">
+    @if(session()->has('edit'))
+    <div class="alert alert-success">
+        {{ session()->get('edit') }}
+    </div>
+@endif
+<div class="mt-5">
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
 @endif
     <form wire:submit="uploadProduct">
         <label>Product Name</label>

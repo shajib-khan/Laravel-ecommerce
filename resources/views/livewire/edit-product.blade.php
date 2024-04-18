@@ -14,9 +14,8 @@
                  <label>Product Description</label>
                     <textarea class="form-control" wire:model="ProductDescription" rows="3"></textarea>
                 <label>Product image</label>
-            <input class="form-control" type="file" wire:model="ProductImage">
-
-            <img src="{{ Storage::url($productImage) }}" alt="">
-        <button type="submit" class="btn btn-primary mt-3">Upload</button>
+            <input class="form-control" type="file" wire:model="ProductImage" >
+            <img style="width: 100px" src="{{ Storage::url($ProductImage) }}" alt="">
+        <button type="submit" class="btn btn-primary mt-3">Update Product</button>
  </form>
 </div>
