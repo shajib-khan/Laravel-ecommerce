@@ -8,27 +8,35 @@ use App\Models\Product;
 class EditProduct extends Component
 {
     use WithFileUploads;
-    public $productName;
-    public $productDescription;
-    public $productImage;
+    public $ProductName;
+    public $ProductDescription;
+    public $ProductImage;
     public $id;
 
 
     public function mount($id)
     {
         $product = Product::find($id);
-        $this->productName =$product->ProductName;
-        $this->productDescription =$product->ProductDescription;
-        $this->productImage = $product->ProductImage;
+        $this->ProductName =$product->ProductName;
+        $this->ProductDescription =$product->ProductDescription;
+        $this->ProductImage = $product->ProductImage;
     }
     public function editProduct()
     {
        $this->validate([
-        'productName'=>'required',
-        'productDescription'=>'required',
+        'ProductName'=>'required',
+        'ProductDescription'=>'required',
 
        ]);
+       $products = Product::find($this->id);
+       $products->update([
+        'ProductName'=>$this->ProductName,
+        'ProductDescription'=>$this->ProductDescription,
+        'ProductImage'=>$this->ProductImage->store('public/photos')
+       ]);
+       return redirect('product')->back()->with('edit',"Product Successfully Updated");
     }
+
 
     public function render()
     {
