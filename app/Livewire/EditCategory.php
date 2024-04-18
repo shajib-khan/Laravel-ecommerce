@@ -5,16 +5,11 @@ use App\Models\Category as ProductCategories;
 use livewire\Attributes\Layout;
 use Livewire\Component;
 use Session;
-
 class EditCategory extends Component
 
 {
-    public $ProductCategories;
     public $category_name="";
     public $id;
-
-
-
     public function mount($id)
     {
         $categories = ProductCategories::find($id);
@@ -29,11 +24,8 @@ class EditCategory extends Component
         $categories->update([
             'category_name'=> $this->category_name
         ]);
-        $this->reset();
         session()->flash('categoryUpdate', 'Category successfully updated.');
-
         return redirect()->to('category');
-
     }
     public function render()
     {
