@@ -4,6 +4,7 @@ use App\Models\Category;
 use App\Models\Product;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Livewire\Attributes\Layout;
 
 class Products extends Component
 {
@@ -39,12 +40,9 @@ class Products extends Component
             'product_price'=>$this->product_price,
             'category_id'=>$this->category_id
         ]);
+            session()->flash('product', 'New  Product Created.');
 
-
-
-
-        session()->flash('product', 'New  Product Created.');
-    }
+}
 
     public function deleteProduct($id)
     {
@@ -53,11 +51,12 @@ class Products extends Component
 
     }
 
+    #[Layout('components.layouts.dashboard')]
     public function render()
     {
         return view('livewire.products',[
             'products'=> Product::all()
-        ])->layout('layouts.admin');
+        ]);
     }
 
 

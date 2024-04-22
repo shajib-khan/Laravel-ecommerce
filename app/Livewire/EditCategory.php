@@ -30,6 +30,7 @@ class EditCategory extends Component
     public function render()
     {
         return view('livewire.edit-category')
-        ->layout('layouts.admin');
+        ->layout('components.layouts.dashboard');
+
     }
 }

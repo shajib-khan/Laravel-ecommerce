@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Livewire;
-use livewire\Attributes\Layout;
 use Livewire\Component;
 use App\Models\Category as ProductCategories;
+use livewire\Attributes\Layout;
 
 class Categories extends Component
 {
@@ -26,13 +26,13 @@ class Categories extends Component
         ProductCategories::find($id)->delete();
         return redirect()->back()->with('message',"Category Deleted");
     }
+
     public function render()
     {
         return view('livewire.categories',
         [
            'categories'=>ProductCategories::simplePaginate(5),
-       ])
-        ->layout('layouts.admin');
+       ])->layout('components.layouts.dashboard');
     }
 
 }

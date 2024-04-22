@@ -1,5 +1,4 @@
-
-<div class="mt-3">
+<div class="container mt-3">
     @if ($errors->any())
     <div class="alert alert-danger">
         <ul>

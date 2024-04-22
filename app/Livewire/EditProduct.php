@@ -5,6 +5,7 @@ use Livewire\Component;
 use Livewire\WithFileUploads;
 use App\Models\Product;
 use App\Models\Category;
+use livewire\Attributes\Layout;
 class EditProduct extends Component
 {
     use WithFileUploads;
@@ -13,7 +14,7 @@ class EditProduct extends Component
     public $ProductImage;
    public  $category_id;
     public $id;
-  
+
 
 
     public function mount($id)
@@ -46,7 +47,7 @@ class EditProduct extends Component
     {
         return view('livewire.edit-product', [
             'categories'=>Category::all()
-        ])->layout('layouts.admin');
+        ])->layout('components.layouts.dashboard');
     }
 
 }

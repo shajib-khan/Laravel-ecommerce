@@ -1,5 +1,5 @@
 
-<div class="mt-3">
+<div class="container mt-3">
     @if (session()->has('categoryUpdate'))
     <div class="alert alert-success">
         {{ session('categoryUpdate') }}
@@ -44,7 +44,7 @@
                     {{ $category->category_name }}
                 </td>
                 <td><a class="btn btn-danger" wire:click="DeleteCategories({{ $category['id'] }})">Delete</a></td>
-                <td><a class="btn btn-primary" wire:navigate ="EditPost"  href="{{ route('edit.category', ['id'=>$category->id]) }})">Edit</a></td>
+                <td><a class="btn btn-primary" wire:navigate ="EditPost"  href="{{ route('edit.category', ['id'=>$category->id]) }}">Edit</a></td>
             </tr>
           @endforeach
         </tbody>

@@ -1,54 +1,49 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
-
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
                     @endif
-                    <body>
-
                         <div class="container-fluid">
-                          <div class="row">
-                            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-                              <div class="sidebar-sticky">
-                                <ul class="nav flex-column">
-                                  <li class="nav-item">
-                                    <a class="nav-link active" href="#">
-                                      <span data-feather="home"></span>
-                                      Dashboard <span class="sr-only">(current)</span>
-                                    </a>
-                                  </li>
-                                  <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('order') }}">
-                                      <span data-feather="file"></span>
-                                      Orders
-                                    </a>
-                                  </li>
-                                  <li class="nav-item">
-                                    <a class="nav-link" wire:navigate href="{{ route('all.products') }} ">
-                                      <span data-feather="shopping-cart"></span>
-                                      Products
-                                    </a>
-                                  </li>
-                                  <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('categories') }}">
-                                      <span data-feather="users"></span>
-                                      Categories
-                                    </a>
-                                  </li>
-                                </ul>
-                            </nav>
+                            <div class="row">
+                              <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                                <div class="sidebar-sticky">
+                                  <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                      <a class="nav-link active" href="#">
+                                        <span data-feather="home"></span>
+                                        Dashboard <span class="sr-only">(current)</span>
+                                      </a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link" href="{{ route('order') }}">
+                                        <span data-feather="file"></span>
+                                        Orders
+                                      </a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link" wire:navigate href="{{ route('all.products') }} ">
+                                        <span data-feather="shopping-cart"></span>
+                                        Products
+                                      </a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link" href="{{ route('categories') }}">
+                                        <span data-feather="users"></span>
+                                        Categories
+                                      </a>
+                                    </li>
+                                  </ul>
+                              </nav>
+                            </div>
                           </div>
-                        </div>
-
                         <!-- Bootstrap core JavaScript
                         ================================================== -->
                         <!-- Placed at the end of the document so the pages load faster -->
@@ -94,7 +89,7 @@
                             }
                           });
                         </script>
-                      </body>
+
                     {{ __('You are logged in!') }}
                 </div>
             </div>

@@ -1,5 +1,7 @@
 <?php
 
+use App\Livewire\Backend\Admin\AdminLogin;
+use App\Livewire\Backend\Dashboard\AdminDashboard;
 use App\Livewire\Body;
 use App\Livewire\Categories;
 use App\Livewire\Dashboard;
@@ -29,8 +31,10 @@ Route::get('single-product', SingleProduct::class)->name('single.product');
 Auth::routes();
 
 /*admin dashboard*/
-Route::get('admin-dashboard', Dashboard::class)->name('dashboard');
-Route::get('login', Login::class)->name('login');
+//Route::get('dashboard', Dashboard::class)->name('dashboard');
+Route::get('admin-dashboard', AdminDashboard::class)->name('dashboard');
+//Route::get('login', Login::class)->name('login');
+
 Route::get('order', Order::class)->name('order');
 Route::get('category', Categories::class)->name('categories');
 

@@ -1,6 +1,4 @@
-
-<div>
-
+<div class="container">
     @if (session()->has('product'))
         <div class="mt-3">
             <div class="alert alert-success">
@@ -8,7 +6,6 @@
             </div>
         </div>
     @endif
-
     @if (session()->has('edit'))
         <div class="mt-3">
             <div class="alert alert-success">
@@ -16,8 +13,6 @@
             </div>
         </div>
     @endif
-
-
     @if ($errors->any())
         <div class="mt-5">
             <div class="alert alert-danger">
@@ -29,7 +24,6 @@
             </div>
         </div>
     @endif
-
     <form wire:submit="uploadProduct">
         <label>Product Name</label>
         <input type="text" class="form-control" wire:model="ProductName" placeholder="Product Name">
