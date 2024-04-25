@@ -8,6 +8,7 @@ class AdminLogin extends Component
 {
     public function render()
     {
-        return view('livewire.backend.admin.admin-login');
+        return view('livewire.backend.admin.admin-login')
+        ->layout('components.layouts.dashboard');
     }
 }
