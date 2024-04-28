@@ -34,17 +34,17 @@ Route::get('single-product', SingleProduct::class)->name('single.product');
 //Route::get('dashboard', Dashboard::class)->name('dashboard');
 Route::get('admin-login', AdminLogin::class)->name('admin.login');
 
- Route::group(['middleware' => ['is_admin']],function(){
+ //Route::group(['middleware' => ['is_admin']],function(){
 
     Route::get('home', AdminDashboard::class)->name('dashboard');
     Route::get('product', Products::class)->name('all.products');
     Route::get('category', Categories::class)->name('categories');
-});
+//});
 Auth::routes();
 
-Route::get('not-admin', function(){
-    return "not admin";
-})->name('not-admin')->middleware(['auth']);
+//Route::get('not-admin', function(){
+    //return "not admin";
+//})->name('not-admin')->middleware(['auth']);
 
 
 Route::get('order', Order::class)->name('order');

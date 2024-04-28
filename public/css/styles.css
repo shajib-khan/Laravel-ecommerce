@@ -103,6 +103,12 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+.header{
+   background-image: url("https://img.freepik.com/free-psd/special-sales-banner-template_23-2148975924.jpg");
+   padding: 100px;
+   
+   
+}
 
 hr {
   margin: 1rem 0;
