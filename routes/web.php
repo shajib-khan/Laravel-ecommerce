@@ -28,18 +28,18 @@ use App\Livewire\Backend\Dashboard\AdminDashboard;
 */
 
 Route::get('/', Body::class)->name('home.body');
-Route::get('single-product', SingleProduct::class)->name('single.product');
+Route::get('single-product/{id}', SingleProduct::class)->name('single.product');
 
 /*admin dashboard*/
 //Route::get('dashboard', Dashboard::class)->name('dashboard');
 Route::get('admin-login', AdminLogin::class)->name('admin.login');
 
- //Route::group(['middleware' => ['is_admin']],function(){
+ Route::group(['middleware' => ['is_admin']],function(){
 
     Route::get('home', AdminDashboard::class)->name('dashboard');
     Route::get('product', Products::class)->name('all.products');
     Route::get('category', Categories::class)->name('categories');
-//});
+});
 Auth::routes();
 
 //Route::get('not-admin', function(){

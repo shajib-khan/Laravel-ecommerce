@@ -1,3 +1,5 @@
+@extends('layouts.app')
+@section('content')
 <div class="container mt-5">
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -27,3 +29,5 @@
         <button type="submit" class="btn btn-primary mt-3">Update Product</button>
  </form>
 </div>
+
+@endsection
