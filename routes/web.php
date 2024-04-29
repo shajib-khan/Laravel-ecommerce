@@ -1,5 +1,8 @@
 <?php
 
+//use App\Http\Controllers\Auth\LoginController;
+
+use App\Http\Controllers\Auth\LoginController;
 use App\Livewire\Body;
 use App\Livewire\Order;
 use App\Models\Category;
@@ -32,15 +35,21 @@ Route::get('single-product/{id}', SingleProduct::class)->name('single.product');
 
 /*admin dashboard*/
 //Route::get('dashboard', Dashboard::class)->name('dashboard');
-Route::get('admin-login', AdminLogin::class)->name('admin.login');
-Route::get('user-dashboard', UserDashboard::class)->name('user.Dashboard');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
- Route::group(['middleware' => ['is_admin']],function(){
 
-    Route::get('home', AdminDashboard::class)->name('dashboard');
+ //Route::group(['middleware' => ['is_admin']],function(){
+
+    Route::get('admin-dashboard', AdminDashboard::class)->name('admin.dashboard');
     Route::get('product', Products::class)->name('all.products');
     Route::get('category', Categories::class)->name('categories');
-});
+    Route::get('edit-category/{id}', EditCategory::class)->name('edit.category');
+    Route::get('edit-product/{id}', EditProduct::class)->name('edit.product');
+    Route::get('order', Order::class)->name('order');
+
+    /*user-dashboard*/
+    Route::get('user-dashboard', UserDashboard::class)->name('user.Dashboard');
+//});
 Auth::routes();
 
 //Route::get('not-admin', function(){
@@ -48,16 +57,16 @@ Auth::routes();
 //})->name('not-admin')->middleware(['auth']);
 
 
-Route::get('order', Order::class)->name('order');
+
 
 
 
 /*product*/
 
-Route::get('edit-product/{id}', EditProduct::class)->name('edit.product');
+
 
 /*category*/
-Route::get('edit-category/{id}', EditCategory::class)->name('edit.category');
+
 
 
 

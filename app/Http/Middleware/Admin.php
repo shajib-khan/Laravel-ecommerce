@@ -15,14 +15,13 @@ class Admin
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
+   {
+    if(auth()->user()->is_admin==1)
     {
-        if(auth()->user()->is_admin == 1 ){
-            return $next($request);
-        }
-
-        abort(403);
-     }
-
+      return   $next($request);
+    }
+   abort(404);
+   }
 }
 
 
