@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Backend\Admin\AdminLogin;
 use App\Livewire\Backend\Dashboard\AdminDashboard;
-
+use App\Livewire\UserDashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +33,7 @@ Route::get('single-product/{id}', SingleProduct::class)->name('single.product');
 /*admin dashboard*/
 //Route::get('dashboard', Dashboard::class)->name('dashboard');
 Route::get('admin-login', AdminLogin::class)->name('admin.login');
+Route::get('user-dashboard', UserDashboard::class)->name('user.Dashboard');
 
  Route::group(['middleware' => ['is_admin']],function(){
 

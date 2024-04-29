@@ -2,9 +2,8 @@
 
 namespace App\Livewire;
 use App\Models\Category as ProductCategories;
-use livewire\Attributes\Layout;
 use Livewire\Component;
-use Session;
+
 class EditCategory extends Component
 
 {
