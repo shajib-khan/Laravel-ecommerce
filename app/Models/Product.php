@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Models;
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -19,5 +18,13 @@ class Product extends Model
     public function categories()
     {
         return $this->hasMany(Category::class);
+    }
+    public function Shopingcart()
+    {
+        return $this->hasMany(Shopingcart::class);
+    }
+    public function OrderProduct()
+    {
+        return $this->hasMany(OrderProduct::class);
     }
 }

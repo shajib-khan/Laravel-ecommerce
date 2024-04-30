@@ -29,13 +29,13 @@
                                       </a>
                                     </li>
                                     <li class="nav-item">
-                                      <a class="nav-link" wire:navigate href="{{ route('all.products') }} ">
+                                      <a class="nav-link" wire:navigate="category" href="{{ route('all.products') }} ">
                                         <span data-feather="shopping-cart"></span>
                                         Products
                                       </a>
                                     </li>
                                     <li class="nav-item">
-                                      <a class="nav-link" href="{{ route('categories') }}">
+                                      <a class="nav-link"wire:navigate="product" href="{{ route('categories') }}">
                                         <span data-feather="users"></span>
                                         Categories
                                       </a>
