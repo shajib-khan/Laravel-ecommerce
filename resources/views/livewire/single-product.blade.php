@@ -1,29 +1,29 @@
 
     <!-- Product section-->
 <section class="py-5">
-    @foreach ($products as $product )
+
     <div class="container px-4 px-lg-5 my-5">
+        @foreach ($products as $product )
         <div class="row gx-4 gx-lg-5 align-items-center">
             <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="{{ Storage::url($product->ProductImage) }}" alt="..." /></div>
             <div class="col-md-6">
-                <div class="small mb-1">SKU: BST-498</div>
                 <h1 class="display-5 fw-bolder">{{ $product->ProductName }}</h1>
                 <div class="fs-5 mb-5">
-
-                    <span>{{ $product->product_price }}</span>
+                    <span>Price: ${{ $product->product_price }}</span>
                 </div>
                 <p class="lead">{{ $product->ProductDescription }}</p>
                 <div class="d-flex">
-                    <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
-                    <button class="btn btn-outline-dark flex-shrink-0" type="button">
-                        <i class="bi-cart-fill me-1"></i>
-                        Add to cart
-                    </button>
+                    <input type="number" class="form-control text-center me-3" id="inputQuantity" value="1" style="max-width: 3rem" />
+                    <button class="p-2 rounded-full bg-blue-600  mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500" wire:click="addToCart({{ $product->id }})">Add to Cart</button>
+                    <button class="p-2 rounded-full bg-blue-600 hover:bg-blue-500 focus:outline-none focus:bg-blue-500" wire:click="buyNow({{ $product->id }})">Buy Now</button>
+
+
                 </div>
             </div>
         </div>
+        @endforeach
     </div>
-    @endforeach
+
 
 
 </section>

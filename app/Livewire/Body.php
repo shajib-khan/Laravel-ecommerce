@@ -4,6 +4,7 @@ namespace App\Livewire;
 use App\Models\Product;
 use Livewire\Component;
 
+
 class Body extends Component
 {
 
@@ -14,4 +15,5 @@ class Body extends Component
         'products'=>Product::all(),
     ]);
     }
+
 }

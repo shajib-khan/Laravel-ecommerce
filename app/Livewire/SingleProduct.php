@@ -3,11 +3,10 @@
 namespace App\Livewire;
 use App\Models\Product;
 use Livewire\Component;
-
+use App\Models\Shopingcart;
 class SingleProduct extends Component
 {
-
-
+    
 
     public function render()
     {
@@ -16,4 +15,5 @@ class SingleProduct extends Component
         'products'=>Product::all()
     ]);
 }
+
 }

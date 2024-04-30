@@ -10,8 +10,11 @@
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- cart page css-->
+        <link href="{{ url('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url('assets/css/form-validation.css') }}" rel="stylesheet">
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="{{ url('assets/css/styles.css') }}" rel="stylesheet" />
         @livewireStyles
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     </head>
@@ -58,7 +61,40 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script src="{{ url('assets/js/scripts.js') }}"></script>
+       <!-- Font Awesome-->
+        <script src="https://kit.fontawesome.com/20cc10e551.js" crossorigin="anonymous"></script>
+        <!-- cart page css-->
+         <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="{{ url('assets/js/vendor/popper.min.js') }}"></script>
+    <script src="{{ url('assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url('assets/js/vendor/holder.min.js') }}"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
         @livewireScripts
     </body>
 </html>
