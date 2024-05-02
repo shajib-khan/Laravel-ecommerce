@@ -53,7 +53,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //});
 Auth::routes();
 
-    Route::get('cart', CartPage::class)->name('cart');
+    Route::get('cart/{id}', CartPage::class)->name('cart');
 //Route::get('not-admin', function(){
     //return "not admin";
 //})->name('not-admin')->middleware(['auth']);

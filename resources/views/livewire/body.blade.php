@@ -31,7 +31,7 @@
                       <!-- Product actions-->
                       <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                           <div class="text-center">
-                            <a class="btn btn-outline-dark mt-auto" wire:navigate ="viewProduct" href="{{ route('single.product', ['id' => $product->id]) }}"">View options</a>
+                            <a class="btn btn-outline-dark mt-auto" wire:navigate ="viewProduct" href="{{ route('single.product', ['id' => $product->id]) }}">View options</a>
                         </div>
                       </div>
                   </div>

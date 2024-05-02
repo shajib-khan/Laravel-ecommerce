@@ -15,7 +15,7 @@
                 <div class="d-flex">
                     <input type="number" class="form-control text-center me-3" id="inputQuantity" value="1" style="max-width: 3rem" />
                     <button class="p-2 rounded-full bg-blue-600  mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500" wire:click="addToCart({{ $product->id }})">Add to Cart</button>
-                    <button class="p-2 rounded-full bg-blue-600 hover:bg-blue-500 focus:outline-none focus:bg-blue-500" wire:click="buyNow({{ $product->id }})">Buy Now</button>
+                    <button class="p-2 rounded-full bg-blue-600 hover:bg-blue-500 focus:outline-none focus:bg-blue-500" wire:navigate="buyNow" href="{{ route('cart',['id'=>$product->id]) }}">Buy Now</button>
 
 
                 </div>
