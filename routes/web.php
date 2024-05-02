@@ -17,7 +17,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Backend\Admin\AdminLogin;
 use App\Livewire\Backend\Dashboard\AdminDashboard;
-use App\Livewire\CartPage;
+use App\Livewire\Cart;
+use App\Livewire\Checkout;
 use App\Livewire\UserDashboard;
 
 /*
@@ -53,7 +54,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //});
 Auth::routes();
 
-    Route::get('cart/{id}', CartPage::class)->name('cart');
+    //Route::get('checkout/{id}', Checkout::class)->name('checkout');
+    Route::get('checkout/{id}', Checkout::class)->name('checkout');
+    Route::get('cart/{id}', Cart::class)->name('cart');
+   
 //Route::get('not-admin', function(){
     //return "not admin";
 //})->name('not-admin')->middleware(['auth']);

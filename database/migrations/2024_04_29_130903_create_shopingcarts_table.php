@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('shopingcarts', function (Blueprint $table) {
             $table->id();
 
-            $table->string('total_price');
+            //$table->string('total_price');
             $table->string('total_quantity')->default('1');
             $table->foreignId('product_id');
             $table->foreignId('user_id');
