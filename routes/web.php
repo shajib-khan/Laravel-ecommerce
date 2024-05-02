@@ -39,7 +39,7 @@ Route::get('single-product/{id}', SingleProduct::class)->name('single.product');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
- Route::group(['middleware' => ['is_admin']],function(){
+//  Route::group(['middleware' => ['is_admin']],function(){
 
     Route::get('admin-dashboard', AdminDashboard::class)->name('admin.dashboard');
     Route::get('user-dashboard', AdminDashboard::class)->name('admin.dashboard');
@@ -51,7 +51,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
     /*user-dashboard*/
     Route::get('user-dashboard', UserDashboard::class)->name('user.Dashboard');
-});
+// });
 Auth::routes();
 
     Route::get('cart/{id}', CartPage::class)->name('cart');
