@@ -1,5 +1,4 @@
-@extends('layouts.app')
-@section('content')
+
 
 <div class="container mt-3">
     @if (session()->has('categoryUpdate'))
@@ -54,4 +53,3 @@
       {{ $categories->links() }}
 </div>
 
-@endsection
