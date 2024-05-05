@@ -11,7 +11,7 @@ class Shopingcart extends Model
     protected $fillable = ['total_quantity', 'product_id','user_id'];
     public function Product()
     {
-       return $this->hasMany(Product::class);
+       return $this->belongsTo(Product::class);
     }
 
 }

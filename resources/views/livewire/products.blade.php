@@ -1,5 +1,3 @@
-@extends('layouts.app')
-@section('content')
 <div class="container">
     @if (session()->has('product'))
         <div class="mt-3">
@@ -81,6 +79,3 @@
         </tbody>
     </table>
 </div>
-
-
-@endsection

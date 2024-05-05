@@ -4,7 +4,6 @@ use App\Models\Category;
 use App\Models\Product;
 use Livewire\Component;
 use Livewire\WithFileUploads;
-use Livewire\Attributes\Layout;
 
 class Products extends Component
 {
@@ -40,7 +39,7 @@ class Products extends Component
             'product_price'=>$this->product_price,
             'category_id'=>$this->category_id
         ]);
-            session()->flash('product', 'New  Product Created.');
+        return redirect()->to('/product')->back()->with('product',"Product Successfully Uploaded");
 
 }
 
@@ -51,7 +50,7 @@ class Products extends Component
 
     }
 
-    #[Layout('components.layouts.dashboard')]
+
     public function render()
     {
         return view('livewire.products',[
@@ -61,6 +60,5 @@ class Products extends Component
 
 
 }
-
 
 

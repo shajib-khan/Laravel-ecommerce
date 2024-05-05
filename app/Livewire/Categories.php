@@ -19,7 +19,7 @@ class Categories extends Component
         );
         $this->category_name="";
 
-        return redirect()->back()->with('message',"New Category Created");
+        return redirect('/category')->back()->with('message',"New Category Created");
     }
     public function DeleteCategories($id)
     {
