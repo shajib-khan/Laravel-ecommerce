@@ -1,7 +1,11 @@
 
     <!-- Product section-->
 <section class="py-5">
-
+    @if(session()->has('cart'))
+    <div class="alert alert-success">
+        {{ session()->get('cart') }}
+    </div>
+@endif
     <div class="container px-4 px-lg-5 my-5">
 
         <div class="row gx-4 gx-lg-5 align-items-center">

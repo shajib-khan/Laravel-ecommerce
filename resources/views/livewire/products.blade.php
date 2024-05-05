@@ -71,7 +71,7 @@
                     <td>{{ $product->ProductDescription }}</td>
                     <td> <img style="width:50px;" src="{{ Storage::url($product->ProductImage) }}" /></td>
                     <td>{{ $product->product_price }}</td>
-                    <td><a class="btn btn-danger" wire:click="deleteProduct({{ $product['id'] }})">Delete</a></td>
+                    <td><a class="btn btn-danger" wire:click="deleteCart({{ $product['id'] }})">Delete</a></td>
                     <td><a class="btn btn-primary" wire:navigate ="editProduct"
                             href="{{ route('edit.product', ['id' => $product->id]) }}">Edit</a></td>
                 </tr>
