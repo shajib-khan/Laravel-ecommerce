@@ -12,7 +12,6 @@
               <div class="row">
                 <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
                   <!-- Image -->
-
                  <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
                     <img style="width:50px;" src="{{ Storage::url($cart->product->ProductImage) }}" />
 
@@ -28,10 +27,7 @@
                 <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
                   <!-- Data -->
                   <p><strong>{{ $cart->product->ProductName }}</strong></p>
-                  <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-sm me-1 mb-2" data-mdb-tooltip-init
-                    title="Remove item">
-
-                  </button>
+                  <button type="btn btn-danger"wire:click="deleteCart({{ $cart['id'] }})">Remove Cart Items</button>
 
                   <!-- Data -->
                 </div>
@@ -64,13 +60,9 @@
                 </div>
               </div>
               @endforeach
-              <!-- Single item -->
+
 
               <hr class="my-4" />
-
-              <!-- Single item -->
-
-              <!-- Single item -->
             </div>
           </div>
           <div class="card mb-4">
@@ -93,12 +85,12 @@
                   <div>
                     <strong>Total amount</strong>
                   </div>
-                  <span><strong>$53.98</strong></span>
+                  <span><strong>{{ $cart->product->product_price }}</strong></span>
                 </li>
               </ul>
 
-              <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg btn-block" wire:navigate="checKout"
-               href="href="#" >
+              <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg btn-block" wire:navigate="checKOut"
+               href="{{ route('checkout',['id'=>$cart->id]) }}" >
                 Go to checkout
               </button>
             </div>

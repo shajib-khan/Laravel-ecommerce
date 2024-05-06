@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('ProductImage');
             $table->integer('product_price');
             $table->foreignId('category_id');
-           
+
 
             $table->timestamps();
         });
