@@ -13,5 +13,8 @@ class Shopingcart extends Model
     {
        return $this->belongsTo(Product::class);
     }
+    public function OrderProduct(){
+        return $this->belongsTo(OrderProduct::class);
+    }
 
 }

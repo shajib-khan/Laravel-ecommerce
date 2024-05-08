@@ -8,7 +8,7 @@
             </div>
             <div class="card-body">
               <!-- Single item -->
-              @foreach ($carts as  $cart)
+              @forelse ($carts as  $cart)
               <div class="row">
                 <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
                   <!-- Image -->
@@ -59,7 +59,9 @@
                   <!-- Price -->
                 </div>
               </div>
-              @endforeach
+              @empty
+              Add to cart product
+              @endforelse
 
 
               <hr class="my-4" />

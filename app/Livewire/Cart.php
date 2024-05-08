@@ -7,9 +7,10 @@ use Illuminate\Support\Facades\Auth;
 
 class Cart extends Component
 {
-   
+
 
     public $carts;
+
     public function mount(){
         $this->carts = Shopingcart::where('user_id',Auth::id())->get();
     }

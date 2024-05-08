@@ -47,7 +47,7 @@ class EditProduct extends Component
     {
         return view('livewire.edit-product', [
             'categories'=>Category::all()
-        ])->layout('components.layouts.dashboard');
+        ]);
     }
 
 }
