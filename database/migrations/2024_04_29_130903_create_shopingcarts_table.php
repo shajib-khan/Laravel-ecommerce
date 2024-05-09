@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('total_quantity')->default('1');
             $table->foreignId('product_id');
             $table->foreignId('user_id');
+            $table->string('product_price');
 
             $table->timestamps();
         });

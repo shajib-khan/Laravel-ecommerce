@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Shopingcart extends Model
 {
     use HasFactory;
-    protected $fillable = ['total_quantity', 'product_id','user_id'];
+    protected $fillable = ['total_quantity', 'product_id','user_id','product_price'];
     public function Product()
     {
        return $this->belongsTo(Product::class);

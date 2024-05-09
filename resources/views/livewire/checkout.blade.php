@@ -1,4 +1,11 @@
 <div class="container mt-5">
+    @if (session()->has('order'))
+    <div class="mt-3">
+        <div class="alert alert-success">
+            {{ session()->get('order') }}
+        </div>
+    </div>
+@endif
     <div class="row">
       <div class="col-md-4 order-md-2 mb-4">
         <h4 class="d-flex justify-content-between align-items-center mb-3">
@@ -18,14 +25,6 @@
             <strong>$20</strong>
           </li>
         </ul>
-        @if (session()->has('order'))
-        <div class="mt-3">
-            <div class="alert alert-success">
-                {{ session()->get('order') }}
-            </div>
-        </div>
-    @endif
-
       </div>
       <div class="col-md-8 order-md-1">
         <h4 class="mb-3">Billing address</h4>

@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('email');
             $table->string('address');
             $table->foreignId('order_id');
-           // $table->foreignId('product_id')->nullable();
+            //$table->foreignId('product_id');
+           // $table->foreignId('product_price');
             $table->foreignId('user_id');
 
             $table->timestamps();
