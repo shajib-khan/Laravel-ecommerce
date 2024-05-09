@@ -13,7 +13,7 @@ class OrderProduct extends Model
         'email',
         'address',
         'order_id',
-        'product_id',
+        
         'user_id'
     ];
     use HasFactory;

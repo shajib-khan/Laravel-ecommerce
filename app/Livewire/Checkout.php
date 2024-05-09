@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Livewire;
-use auth;
+
 use app\Models\Product;
 use Livewire\Component;
 use App\Models\OrderProduct;
+use Illuminate\Support\Facades\Auth;
 
 class Checkout extends Component
 {
@@ -13,9 +14,9 @@ class Checkout extends Component
     public $firstName;
     public $email;
     public $address;
-    public $product;
-    public $order_id=1;
    
+    public $order_id=1;
+
 
     public function placeOrder(){
         OrderProduct::create([
@@ -23,8 +24,8 @@ class Checkout extends Component
             'email'=>$this->email,
             'address'=>$this->address,
             'order_id'=>$this->order_id,
-            'product_id' => $this->product->id,
-            'user_id' => auth()->id(),
+
+            'user_id' => Auth::user()->id,
         ]);
         return redirect('/checkout')->back()->with('order',"order Successfully placed");
     }
