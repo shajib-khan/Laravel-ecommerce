@@ -14,24 +14,18 @@
                   <!-- Image -->
                  <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
                     <img style="width:50px;" src="{{ Storage::url($cart->product->ProductImage) }}" />
-
                     <a href="#!">
                       <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
                     </a>
                   </div>
-
-
                   <!-- Image -->
                 </div>
-
                 <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
                   <!-- Data -->
                   <p><strong>{{ $cart->product->ProductName }}</strong></p>
                   <button type="btn btn-danger"wire:click="deleteCart({{ $cart['id'] }})">Remove Cart Items</button>
-
                   <!-- Data -->
                 </div>
-
                 <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                   <!-- Quantity -->
                   <div class="d-flex mb-4" style="max-width: 300px">
@@ -39,19 +33,16 @@
                       onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                       <i class="fas fa-minus"></i>
                     </button>
-
                     <div data-mdb-input-init class="form-outline">
                       <input id="form1" min="0" name="quantity" value="1" type="number" class="form-control" />
                       <label class="form-label" for="form1">Quantity</label>
                     </div>
-
                     <button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary px-3 ms-2"
                       onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                       <i class="fas fa-plus"></i>
                     </button>
                   </div>
                   <!-- Quantity -->
-
                   <!-- Price -->
                   <p class="text-start text-md-center">
                     Product Price <strong>{{ $cart->product->product_price }}</strong>
@@ -60,8 +51,6 @@
                 </div>
               </div>
             @endforeach
-
-
               <hr class="my-4" />
             </div>
           </div>

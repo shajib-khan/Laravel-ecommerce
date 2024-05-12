@@ -13,9 +13,9 @@ class OrderProduct extends Model
         'email',
         'address',
         'order_id',
-        //'product_id',
-        //'product_price',
-        'user_id'
+        'product_id',
+        'product_price',
+        'user_id',
     ];
     use HasFactory;
     public function Order()

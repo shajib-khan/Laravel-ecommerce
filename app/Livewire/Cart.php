@@ -20,6 +20,13 @@ class Cart extends Component
         return redirect()->back()->with('delete',"Product Successfully Deleted");
 
     }
+    public function totalAmount(){
+        $totalAmount=0;
+        foreach($this->carts as $cart){
+            $totalAmount +=$cart->product->product_price*$cart->total_quantity;
+        }
+        return $totalAmount;
+    }
 
     public function render()
     {

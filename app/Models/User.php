@@ -33,7 +33,7 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
-    public function orders()
+    public function order()
     {
         return $this->hasMany(Order::class);
     }

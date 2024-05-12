@@ -16,8 +16,8 @@ class Checkout extends Component
     public $address;
 
     public $order_id=1;
-    public $product_price;
     public $product;
+
 
 
     public function placeOrder(){
@@ -25,6 +25,8 @@ class Checkout extends Component
             'first_name'=>$this->firstName,
             'email'=>$this->email,
             'address'=>$this->address,
+           'product_id'=>$this->product->id,
+           'product_price'=>$this->product->product_price,
             'order_id'=>$this->order_id,
             'user_id' => Auth::user()->id,
         ]);
