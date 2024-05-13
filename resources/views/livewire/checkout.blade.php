@@ -22,7 +22,7 @@
           </li>
           <li class="list-group-item d-flex justify-content-between">
             <span>Total (USD)</span>
-            <strong>$20</strong>
+            <strong>{{$totalProductAmount}}</strong>
           </li>
         </ul>
       </div>

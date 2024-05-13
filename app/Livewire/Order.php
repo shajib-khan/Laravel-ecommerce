@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Livewire;
-use livewire\Attributes\Layout;
 use Livewire\Component;
 
 class Order extends Component

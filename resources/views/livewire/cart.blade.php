@@ -45,7 +45,9 @@
                   <!-- Quantity -->
                   <!-- Price -->
                   <p class="text-start text-md-center">
-                    Product Price <strong>{{ $cart->product->product_price }}</strong>
+                    Product Price
+                    {{ $cart->product->product_price * $cart->total_quantity }}
+                    @php $totalAmount += $cart->product->product_price * $cart->total_quantity @endphp
                   </p>
                   <!-- Price -->
                 </div>
@@ -61,20 +63,11 @@
             <div class="card-body">
               <ul class="list-group list-group-flush">
                 <li
-                  class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                  Products
-                  <span>$53.98</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                  Shipping
-                  <span>Gratis</span>
-                </li>
-                <li
                   class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
                   <div>
-                    <strong>Total amount</strong>
+                    <strong>Total Amount{{$totalAmount }}</strong>
                   </div>
-                  <span><strong>{{ $cart->product->product_price }}</strong></span>
+                   <span><strong> </strong></span>
                 </li>
               </ul>
 
