@@ -18,6 +18,7 @@ return new class extends Migration
              $table->string('email');
              $table->string('address');
              $table->foreignId('user_id');
+             $table->string('total_amount');
 
             $table->timestamps();
         });

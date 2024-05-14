@@ -17,7 +17,8 @@ return new class extends Migration
             $table->foreignId('order_id');
             $table->foreignId('product_id');
             $table->string('total_quantity');
-            $table->string('total_amount');
+            $table->string('product_price');
+
 
             $table->timestamps();
         });

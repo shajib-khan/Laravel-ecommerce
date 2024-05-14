@@ -13,6 +13,7 @@ class Order extends Model
         'first_name',
         'email',
         'address',
+        'total_amount',
     ];
     public function User()
     {

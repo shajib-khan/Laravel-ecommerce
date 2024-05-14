@@ -22,7 +22,7 @@
           </li>
           <li class="list-group-item d-flex justify-content-between">
             <span>Total (USD)</span>
-            <strong>{{$totalProductAmount}}</strong>
+            <strong>${{$this->getTotalAmount($totalAmount)}}</strong>
           </li>
         </ul>
       </div>
@@ -53,7 +53,7 @@
             </div>
           </div>
           <hr class="mb-4">
-          <button class="btn btn-primary btn-lg btn-block"wire:click="placeOrder">Continue to checkout</button>
+          <button class="btn btn-primary btn-lg btn-block"wire:click.prevent="placeOrder">Continue to checkout</button>
         </form>
       </div>
     </div>

@@ -5,31 +5,55 @@ use Livewire\Component;
 use App\Models\OrderProduct;
 use App\Models\Shopingcart;
 use App\Models\Order;
+use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 class Checkout extends Component
 {
-    public $firstName,$totalProductAmount=0, $carts, $shopingcart, $cart,$email,$address,$order_id=1,$product,$order;
+    public $firstName;
+    public $totalAmount=0;
+    public $carts;
+    public $shopingcart;
+    //public  $cart;
+    public $email;
+    public $address;
+    public $order_id;
+    public $product;
+    public $order;
 
-    public function orderProducts(){
+    public function mount(){
+        $this->carts = Shopingcart::where('user_id',Auth::id())->get();
+    }
+    public function getTotalAmount(){
+        $totalAmount = 0;
+
+        foreach($this->carts as $cart){
+            $totalAmount += $cart->product->product_price * $cart->total_quantity;
+        }
+
+        return $totalAmount;
+    }
+
+    public function placeOrder(){
+
       $order = Order::create([
         'user_id'=>auth()->user()->id,
         'first_name'=>$this->firstName,
         'email'=>$this->email,
         'address'=>$this->address,
+        'total_amount'=>$this->totalAmount,
         ]);
 
-        foreach( $this->shopingcart as $cart){
+
+        foreach( $this->carts as $cart){
              OrderProduct::create([
                 'order_id'=>$order->id,
-                'product_id'=>$this->$cart->product_id,
-                'total_quantity'=>$this->$cart->total_quantity,
-                'total_amount'=>$this->totalProductAmount,
+                'product_id'=>$cart->product_id,
+                'total_quantity'=>$cart->total_quantity,
+                'product_price'=>$cart->product_price,
         ]);
         }
     }
-        public function placeOrder(){
-            $placeOrder = $this->orderProducts();
-        }
+
 
 
     public function render(){
@@ -37,3 +61,4 @@ class Checkout extends Component
         return view('livewire.checkout');
     }
 }
+

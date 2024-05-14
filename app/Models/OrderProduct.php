@@ -12,7 +12,7 @@ class OrderProduct extends Model
                 'order_id',
                 'product_id',
                 'total_quantity',
-                'total_amount',
+                'product_price',
     ];
     use HasFactory;
     public function Order()
