@@ -17,21 +17,19 @@ class Checkout extends Component
         'email'=>$this->email,
         'address'=>$this->address,
         ]);
-        $orderItems = OrderProduct::create([
-                'order_id'=>$order->id,
-                'product_id'=>$this->product->id,
-                'total_quantity'=>$this->shopingcart->total_quantity,
-                'total_amount'=>$this->cart->product->product_price,
-        ]);
-    }
-    public function placeOrder(){
-        $placeOrder = $this->orderProducts();
-        if($placeOrder){
 
-        }else{
-            '404';
+        foreach( $this->shopingcart as $cart){
+             OrderProduct::create([
+                'order_id'=>$order->id,
+                'product_id'=>$this->$cart->product_id,
+                'total_quantity'=>$this->$cart->total_quantity,
+                'total_amount'=>$this->totalProductAmount,
+        ]);
         }
     }
+        public function placeOrder(){
+            $placeOrder = $this->orderProducts();
+        }
 
 
     public function render(){
